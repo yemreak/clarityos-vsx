@@ -68,13 +68,13 @@ export function activate(context: vscode.ExtensionContext) {
 
 	/**
 	 * Git Commit Hover Provider
-	 * Recognizes 7-40 character hex strings and shows commit information.
+	 * Recognizes 7-8 character hex strings (standard git commit length) and shows commit information.
 	 */
 	const hoverProvider = vscode.languages.registerHoverProvider(
 		[{ scheme: 'file', language: 'markdown' }, { scheme: 'file', language: 'typescript' }, { scheme: 'file', language: 'javascript' }, { scheme: 'file', language: 'python' }],
 		{
 			provideHover(document: vscode.TextDocument, position: vscode.Position): vscode.Hover | null {
-				const range = document.getWordRangeAtPosition(position, /\b[a-f0-9]{7,40}\b/);
+				const range = document.getWordRangeAtPosition(position, /\b[a-f0-9]{7,8}\b/);
 				if (!range) return null;
 
 				const hash = document.getText(range);
