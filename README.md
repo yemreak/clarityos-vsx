@@ -1,6 +1,6 @@
-# ClarityOS VSCode
+# ClarityOS VSX
 
-A VSCode extension that makes file paths and git commits clickable.
+A VSX extension that makes file paths and git commits clickable.
 
 ## What It Does
 
@@ -14,12 +14,12 @@ When you write these in your files:
 
 When taking notes or writing documentation, you often reference files and commits. This extension makes those references clickable, so you don't have to copy-paste or search for them.
 
-Works great with Claude Code - when Claude mentions a file with @ or a commit hash, you can click directly.
+Works with VS Code, VSCodium, and Claude Code - when Claude mentions a file with @ or a commit hash, you can click directly.
 
 ## Installation
 
 ```bash
-cd /Users/yemreak/Projects/clarity-vscode
+cd /Users/yemreak/Projects/clarity-vsx
 bun run install
 ```
 
@@ -39,7 +39,7 @@ Includes a dark theme that's easy on the eyes:
 
 ## Publishing
 
-This extension is available on [Open VSX Registry](https://open-vsx.org) - the free, vendor-neutral marketplace for VS Code extensions.
+This extension is available on [Open VSX Registry](https://open-vsx.org) - the free, vendor-neutral marketplace for VSX extensions.
 
 ## License
 

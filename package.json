@@ -1,7 +1,7 @@
 {
 	"name": "clarityos",
 	"displayName": "ClarityOS",
-	"description": "Bridge Claude Code, Git, and VSCode into a unified knowledge system. @ file links, git commit hover, Claude session integration.",
+	"description": "Bridge Claude Code, Git, and code editors into a unified knowledge system. @ file links, git commit hover, Claude session integration.",
 	"version": "0.0.1",
 	"publisher": "yemreak",
 	"icon": "icon.png",

@@ -1,5 +1,5 @@
 /**
- * ClarityOS VSCode Extension
+ * ClarityOS VSX Extension
  * 
  * Pattern: VISIBILITY BRIDGE
  * Make the invisible visible. Connect the disconnected.
