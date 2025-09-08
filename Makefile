@@ -6,8 +6,8 @@ install:
 	@rm -f clarityos-*.vsix
 	@rm -rf out node_modules
 
-# Publish to VSCode Marketplace
+# Publish to Open VSX
 publish:
 	@bun build ./src/extension.ts --outdir ./out --target node --format cjs --sourcemap --external vscode
-	@vsce publish
+	@npx ovsx publish --pat $(OVSX_PAT)
 	@rm -rf out

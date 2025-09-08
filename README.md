@@ -37,6 +37,10 @@ Includes a dark theme that's easy on the eyes:
 3. Makes them clickable or hoverable
 4. That's it
 
+## Publishing
+
+This extension is available on [Open VSX Registry](https://open-vsx.org) - the free, vendor-neutral marketplace for VS Code extensions.
+
 ## License
 
 Apache 2.0
