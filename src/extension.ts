@@ -6,7 +6,7 @@
  * 
  * Three core recognitions:
  * 1. @ patterns -> File references
- * 2. Hex patterns -> Git commits or Claude sessions  
+ * 2. Hex patterns -> Git commits
  * 3. # patterns -> Semantic tags
  * 
  * Philosophy:
@@ -17,7 +17,6 @@
  * @example
  * @docs/README.md -> Clickable file link
  * a1b2c3d -> Git commit hover
- * df900ee5-1bfb -> Claude session suggestion
  * #architecture -> Highlighted tag
  */
 
@@ -68,9 +67,8 @@ export function activate(context: vscode.ExtensionContext) {
 	);
 
 	/**
-	 * Git Commit & Claude Session Hover Provider
-	 * Recognizes 7-40 character hex strings.
-	 * First tries git commit lookup, falls back to Claude session suggestion.
+	 * Git Commit Hover Provider
+	 * Recognizes 7-40 character hex strings and shows commit information.
 	 */
 	const hoverProvider = vscode.languages.registerHoverProvider(
 		[{ scheme: 'file', language: 'markdown' }, { scheme: 'file', language: 'typescript' }, { scheme: 'file', language: 'javascript' }, { scheme: 'file', language: 'python' }],
@@ -106,18 +104,8 @@ export function activate(context: vscode.ExtensionContext) {
 
 					return new vscode.Hover(markdown, range);
 				} catch (gitError) {
-					// Not a git commit, show options
-					const markdown = new vscode.MarkdownString();
-					markdown.isTrusted = true;
-					markdown.supportHtml = true;
-					
-					markdown.appendMarkdown(`**Hash:** \`${hash.substring(0, 8)}\`\n\n`);
-					markdown.appendMarkdown(`Not found in git history\n\n`);
-					markdown.appendMarkdown(`If this is a Claude session ID:\n\n`);
-					markdown.appendMarkdown(`[▶ Check Claude Session](command:workbench.action.terminal.sendSequence?${encodeURIComponent(JSON.stringify({ "text": `chats ${hash}\n` }))})\n\n`);
-					markdown.appendMarkdown(`_Click to run \`chats ${hash}\` in terminal_`);
-
-					return new vscode.Hover(markdown, range);
+					// Not a git commit, likely other hash type
+					return null;
 				}
 				return null;
 			}

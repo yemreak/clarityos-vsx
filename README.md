@@ -7,14 +7,13 @@ A VSX extension that makes file paths and git commits clickable.
 When you write these in your files:
 - `@docs/README.md` → Click to open the file
 - `a1b2c3d` → Hover to see what changed in that commit
-- `df900ee5-1bfb-48e7` → If not a git commit, suggests running Claude session command
 - `#planning` → Colors hashtags differently so they stand out
 
 ## Why Use This
 
 When taking notes or writing documentation, you often reference files and commits. This extension makes those references clickable, so you don't have to copy-paste or search for them.
 
-Works with VS Code, VSCodium, and Claude Code - when Claude mentions a file with @ or a commit hash, you can click directly.
+Works with VS Code, VSCodium, and code editors - when you reference files with @ or mention commit hashes, you can click directly.
 
 ## Installation
 

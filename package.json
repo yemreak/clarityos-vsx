@@ -42,6 +42,10 @@
 			"path": "./themes/starry-night.json"
 		}]
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/yemreak/clarityos-vsx"
+	},
 	"devDependencies": {
 		"@types/vscode": "^1.74.0",
 		"@types/node": "^20.0.0",

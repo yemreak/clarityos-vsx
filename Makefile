@@ -1,3 +1,7 @@
+# Load .env file
+include .env
+export
+
 # Install to Cursor
 install:
 	@bun build ./src/extension.ts --outdir ./out --target node --format cjs --sourcemap --external vscode
