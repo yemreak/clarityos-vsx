@@ -1,8 +1,8 @@
 {
 	"name": "clarityos",
 	"displayName": "ClarityOS",
-	"description": "Bridge Claude Code, Git, and code editors into a unified knowledge system. @ file links, git commit hover, Claude session integration.",
-	"version": "0.0.1",
+	"description": "Bridge Git and code editors into a unified knowledge system. @ file links, git commit hover, hashtag highlighting.",
+	"version": "0.0.2",
 	"publisher": "yemreak",
 	"icon": "icon.png",
 	"license": "Apache-2.0",

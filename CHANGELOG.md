@@ -1,11 +1,17 @@
 # ClarityOS VSX Changelog
 
+## [0.0.2] - 2025-01-08
+
+### Fixed
+- Limited git commit regex to 7-8 characters to prevent false matches
+- Improved hover accuracy for standard git commit hashes
+- Cleaned up descriptions and documentation
+
 ## [0.0.1] - 2025-01-08
 
 ### Initial Release
 - @ file linking support for Markdown, TypeScript, Python, and Swift
 - Git commit hover with inline commit information
-- Claude session ID detection with terminal command integration
 - Hashtag syntax highlighting
 - Starry Night dark theme (#202020 background)
 - Zero configuration setup
