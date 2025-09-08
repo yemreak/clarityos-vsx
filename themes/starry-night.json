@@ -48,6 +48,10 @@
     "commandCenter.background": "#202020",
     "quickInput.background": "#202020",
     "commandCenter.activeBackground": "#202020",
+    "editor.findMatchBackground": "#640303",
+    "editor.findMatchHighlightBackground": "#442500ca",
+    "editor.findRangeHighlightBackground": "#442500ca",
+    "editor.hoverHighlightBackground": "#442500ca",
     "debugToolBar.background": "#202020",
     "foreground": "#c1c1c1",
     "activityBar.foreground": "#c1c1c1",
@@ -412,7 +416,7 @@
         "string.unquoted.link.clarityos.file"
       ],
       "settings": {
-        "foreground": "#4FC1FF",
+        "foreground": "#de9c0d",
         "fontStyle": "underline"
       }
     },
@@ -422,7 +426,7 @@
         "constant.numeric.commit.clarityos"
       ],
       "settings": {
-        "foreground": "#FFD700",
+        "foreground": "#de9c0d",
         "fontStyle": "italic"
       }
     },
@@ -434,6 +438,16 @@
       "settings": {
         "foreground": "#B180D7",
         "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": [
+        "punctuation.definition.heading.markdown",
+        "punctuation.definition.markdown",
+        "fenced_code.block.language.markdown"
+      ],
+      "settings": {
+        "foreground": "#6f6f6d"
       }
     },
     {
