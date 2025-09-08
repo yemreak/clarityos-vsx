@@ -23,6 +23,13 @@ cd /Users/yemreak/Projects/clarity-vscode
 bun run install
 ```
 
+## Starry Night Theme
+
+Includes a dark theme that's easy on the eyes:
+- True black background (#202020) - reduces eye strain
+- No bright colors that grab your attention unnecessarily
+- Designed to help you focus on your code, not the editor
+
 ## How It Works
 
 1. Finds patterns in your text (like @file or hex strings)
