@@ -42,11 +42,6 @@
 			"path": "./themes/starry-night.json"
 		}]
 	},
-	"scripts": {
-		"build": "bun build ./src/extension.ts --outdir ./out --target node --format cjs --sourcemap --external vscode",
-		"package": "vsce package --no-dependencies --allow-missing-repository",
-		"install": "bun run build && bun run package && cursor --install-extension clarity-vscode-*.vsix && rm -f clarity-vscode-*.vsix && rm -rf out node_modules"
-	},
 	"devDependencies": {
 		"@types/vscode": "^1.74.0",
 		"@types/node": "^20.0.0",
