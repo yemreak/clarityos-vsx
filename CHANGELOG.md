@@ -1,5 +1,12 @@
 # ClarityOS VSX Changelog
 
+## [0.0.3] - 2025-01-08
+
+### Improved
+- Synced Starry Night theme with VSCode settings for perfect color matching
+- Added missing markdown punctuation color (#6f6f6d) for consistent highlighting
+- Theme now fully compatible with local VSCode configuration
+
 ## [0.0.2] - 2025-01-08
 
 ### Fixed
