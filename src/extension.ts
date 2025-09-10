@@ -34,11 +34,11 @@ export function activate(context: vscode.ExtensionContext) {
 	const linkProvider = vscode.languages.registerDocumentLinkProvider(
 		[{ scheme: 'file', language: 'markdown' }, { scheme: 'file', language: 'swift' }, { scheme: 'file', language: 'typescript' }, { scheme: 'file', language: 'python' }],
 		{
-			provideDocumentLinks(document: vscode.TextDocument): vscode.DocumentLink[] {
+			provideDocumentLinks(document: vscode.TextDocument, _token: vscode.CancellationToken): vscode.ProviderResult<vscode.DocumentLink[]> {
 				const links: vscode.DocumentLink[] = [];
 				const text = document.getText();
 				const regex = /@([^\s]+)/g;
-				let match;
+				let match: RegExpExecArray | null;
 
 				while ((match = regex.exec(text)) !== null) {
 					const filePath = match[1]!;
@@ -56,14 +56,13 @@ export function activate(context: vscode.ExtensionContext) {
 					if (fs.existsSync(absolutePath)) {
 						const targetUri = vscode.Uri.file(absolutePath);
 						const link = new vscode.DocumentLink(range, targetUri);
-						link.tooltip = `Open ${filePath}`;
 						links.push(link);
 					}
 				}
 
 				return links;
 			}
-		}
+		} as vscode.DocumentLinkProvider
 	);
 
 	/**
@@ -97,7 +96,6 @@ export function activate(context: vscode.ExtensionContext) {
 
 					const markdown = new vscode.MarkdownString();
 					markdown.isTrusted = true;
-					markdown.supportHtml = true;
 					markdown.appendMarkdown(`**Git Commit:** \`${hash.substring(0, 7)}\` · ${relativeDate}\n\n`);
 					markdown.appendMarkdown(commitInfo);
 					markdown.appendMarkdown(`\n\n[View Full Commit](command:git.viewCommit?${encodeURIComponent(JSON.stringify([hash]))})`);
@@ -107,7 +105,6 @@ export function activate(context: vscode.ExtensionContext) {
 					// Not a git commit, likely other hash type
 					return null;
 				}
-				return null;
 			}
 		}
 	);
