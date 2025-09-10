@@ -13,27 +13,6 @@
 					"name": "string.unquoted.link.clarityos.file"
 				}
 			}
-		},
-		{
-			"name": "markup.underline.link.clarityos.commit",
-			"match": "(?<!`)\\b([a-f0-9]{7,40})\\b(?!`)",
-			"captures": {
-				"0": {
-					"name": "markup.underline.link.clarityos.commit"
-				},
-				"1": {
-					"name": "constant.numeric.commit.clarityos"
-				}
-			}
-		},
-		{
-			"name": "entity.name.tag.clarityos",
-			"match": "(#[a-z_]+)\\b",
-			"captures": {
-				"1": {
-					"name": "entity.name.tag.hashtag.clarityos"
-				}
-			}
 		}
 	]
 }
