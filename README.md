@@ -1,6 +1,7 @@
 # ClarityOS VSX
 
 A VSX extension that makes file paths and git commits clickable.
+> Experimental extension.
 
 ## What It Does
 
