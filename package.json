@@ -2,40 +2,15 @@
 	"name": "clarityos",
 	"displayName": "ClarityOS",
 	"description": "Bridge Git and code editors into a unified knowledge system. @ file links, git commit hover, hashtag highlighting.",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"publisher": "yemreak",
 	"icon": "icon.png",
 	"license": "Apache-2.0",
 	"engines": {
 		"vscode": "^1.74.0"
 	},
-	"categories": ["Programming Languages"],
-	"main": "./out/extension.js",
-	"activationEvents": [
-		"onLanguage:markdown",
-		"onLanguage:swift",
-		"onLanguage:typescript",
-		"onLanguage:python"
-	],
+	"categories": ["Themes"],
 	"contributes": {
-		"grammars": [{
-			"scopeName": "markdown.clarityos.injection",
-			"path": "./syntaxes/clarityos.injection.json",
-			"injectTo": ["text.html.markdown", "source.swift", "source.ts", "source.tsx", "source.python"]
-		}],
-		"languages": [{
-			"id": "markdown",
-			"extensions": [".md"]
-		}, {
-			"id": "swift",
-			"extensions": [".swift"]
-		}, {
-			"id": "typescript",
-			"extensions": [".ts", ".tsx"]
-		}, {
-			"id": "python",
-			"extensions": [".py"]
-		}],
 		"themes": [{
 			"label": "Starry Night",
 			"uiTheme": "vs-dark",
