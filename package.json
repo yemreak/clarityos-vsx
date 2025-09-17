@@ -1,7 +1,7 @@
 {
 	"name": "clarityos",
 	"displayName": "ClarityOS",
-	"description": "Bridge Git and code editors into a unified knowledge system. @ file links, git commit hover, hashtag highlighting.",
+	"description": "Intuitive dark theme focused on minimal visual noise",
 	"version": "0.0.4",
 	"publisher": "yemreak",
 	"icon": "icon.png",
@@ -16,15 +16,5 @@
 			"uiTheme": "vs-dark",
 			"path": "./themes/starry-night.json"
 		}]
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/yemreak/clarityos-vsx"
-	},
-	"devDependencies": {
-		"@types/bun": "latest",
-		"@types/node": "^20.0.0",
-		"@types/vscode": "^1.74.0",
-		"vscode": "^1.1.37"
 	}
 }

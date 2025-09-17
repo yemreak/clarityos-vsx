@@ -401,16 +401,6 @@
 		},
 		{
 			"scope": [
-				"markup.underline.link.clarityos.file",
-				"string.unquoted.link.clarityos.file"
-			],
-			"settings": {
-				"foreground": "#de9c0d",
-				"fontStyle": "underline"
-			}
-		},
-		{
-			"scope": [
 				"punctuation.definition.heading.markdown",
 				"punctuation.definition.markdown",
 				"fenced_code.block.language.markdown"
