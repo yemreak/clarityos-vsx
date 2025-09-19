@@ -433,7 +433,7 @@
 		{
 			"scope": "log.info",
 			"settings": {
-				"foreground": "#698ac9"
+				"foreground": "#588DCC"
 			}
 		},
 		{
@@ -472,14 +472,14 @@
 				"constant"
 			],
 			"settings": {
-				"foreground": "#698ac9",
+				"foreground": "#588DCC",
 				"fontStyle": "italic"
 			}
 		},
 		{
 			"scope": "variable.other.enummember",
 			"settings": {
-				"foreground": "#698ac9"
+				"foreground": "#588DCC"
 			}
 		},
 		{
