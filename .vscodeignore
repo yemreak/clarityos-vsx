@@ -1,9 +1,34 @@
-.env
-.env.example
-.gitignore
-.git/
-node_modules/
-src/
-Makefile
+# VS Code workspace
+.vscode/**
+
+# Git
+.git*
+
+# macOS
+.DS_Store
+
+# Source files (compiled files in out/ are sufficient)
+**/*.ts
+!**/*.d.ts
+
+# Build config
+tsconfig.json
 bun.lock
+esbuild.js
+
+# Developer documentation (not needed by users)
+ARCHITECTURE.md
+CLAUDE.md
+
+# Old packages
 *.vsix
+
+# Node modules tests and docs
+node_modules/**/test/**
+node_modules/**/*.md
+node_modules/**/LICENSE
+node_modules/**/CHANGELOG.md
+node_modules/**/.github/**
+
+# Source maps
+**/*.map

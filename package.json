@@ -1,20 +1,126 @@
 {
 	"name": "clarityos",
 	"displayName": "ClarityOS",
-	"description": "Intuitive dark theme focused on minimal visual noise",
-	"version": "0.0.4",
+	"description": "Serving clarity to humanity and their agents",
+	"version": "1.0.1",
 	"publisher": "yemreak",
-	"icon": "icon.png",
-	"license": "Apache-2.0",
 	"engines": {
-		"vscode": "^1.74.0"
+		"vscode": "^1.99.0"
 	},
-	"categories": ["Themes"],
+	"categories": [
+		"Programming Languages",
+		"Themes",
+		"Other"
+	],
+	"keywords": [
+		"markdown",
+		"syntax",
+		"highlighting",
+		"vibe coding",
+		"theme",
+		"dark",
+		"cli",
+		"bridge",
+		"clarity",
+		"ai"
+	],
+	"icon": "icon.png",
+	"main": "./out/extension.js",
+	"activationEvents": [
+		"onStartupFinished"
+	],
 	"contributes": {
-		"themes": [{
-			"label": "Starry Night",
-			"uiTheme": "vs-dark",
-			"path": "./themes/starry-night.json"
-		}]
-	}
+		"commands": [
+			{
+				"command": "clarityos.setupKeybindings",
+				"title": "ClarityOS: Setup Keybindings"
+			},
+			{
+				"command": "clarityos.closeCursorTerminal",
+				"title": "ClarityOS: Close Cursor Terminal"
+			},
+			{
+				"command": "clarityos.searchInStagedFiles",
+				"title": "ClarityOS: Search in Staged Files"
+			},
+			{
+				"command": "clarityos.searchInUnstagedFiles",
+				"title": "ClarityOS: Search in Unstaged Files"
+			},
+			{
+				"command": "clarityos.searchFolders",
+				"title": "ClarityOS: Search Folders"
+			},
+			{
+				"command": "clarityos.searchPaths",
+				"title": "ClarityOS: Search Paths"
+			},
+			{
+				"command": "clarityos.sendCursorLine",
+				"title": "ClarityOS: Send Cursor Line to Terminal"
+			},
+			{
+				"command": "clarityos.showFileHistory",
+				"title": "ClarityOS: File History",
+				"icon": "$(history)"
+			},
+			{
+				"command": "clarityos.executeSCMCommand",
+				"title": "ClarityOS: Execute SCM Command",
+				"icon": "$(git-commit)"
+			}
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"command": "clarityos.showFileHistory",
+					"group": "navigation",
+					"when": "resourceScheme == file"
+				}
+			],
+			"scm/title": [
+				{
+					"command": "clarityos.executeSCMCommand",
+					"group": "navigation",
+					"when": "scmProvider == git"
+				}
+			]
+		},
+		"jsonValidation": [
+			{
+				"fileMatch": ".clarityos.json",
+				"url": "./schemas/clarityos.schema.json"
+			}
+		],
+		"themes": [
+			{
+				"label": "ClarityOS",
+				"uiTheme": "vs-dark",
+				"path": "./themes/clarity.json"
+			}
+		]
+	},
+	"scripts": {
+		"reinstall": "bun run check && code --uninstall-extension yemreak.clarityos 2>/dev/null || true && sleep 1 && /bin/rm -rf out/ && node esbuild.js --production && bunx vsce package && code --install-extension clarityos-1.0.1.vsix --force && echo '\n✓ Extension installed. Restart VS Code to activate.'",
+		"compile": "bun run reinstall",
+		"check": "bunx tsc --noEmit --noUnusedLocals --noUnusedParameters && eslint .",
+		"watch": "node esbuild.js --watch",
+		"package": "node esbuild.js --production && bunx vsce package"
+	},
+	"dependencies": {
+		"tsx": "^4.19.2"
+	},
+	"devDependencies": {
+		"@types/node": "^20.19.17",
+		"@types/vscode": "1.99.0",
+		"esbuild": "^0.25.10",
+		"typescript": "^5.9.2"
+	},
+	"author": "yemreak",
+	"license": "Apache-2.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/yemreak/clarityos-vsx.git"
+	},
+	"type": "commonjs"
 }
