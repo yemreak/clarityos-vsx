@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ClarityOS Configuration",
+  "description": "Configuration file for ClarityOS extension commands",
+  "type": "object",
+  "properties": {
+    "commands": {
+      "type": "array",
+      "description": "List of command definitions",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "path"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique command identifier (e.g., 'clarityos.myCommand')",
+            "pattern": "^[a-zA-Z0-9]+\\.[a-zA-Z0-9]+$"
+          },
+          "title": {
+            "type": "string",
+            "description": "Human-readable command title shown in Command Palette"
+          },
+          "path": {
+            "type": "string",
+            "description": "Path to command implementation file (relative, absolute, or ~/ home path)"
+          },
+          "icon": {
+            "type": "string",
+            "description": "VSCode icon identifier (e.g., '$(git-commit)')",
+            "pattern": "^\\$\\([a-zA-Z0-9-]+\\)$"
+          },
+          "keybinding": {
+            "type": "string",
+            "description": "Keyboard shortcut (e.g., 'cmd+k' or 'ctrl+shift+p')"
+          },
+          "menu": {
+            "type": ["string", "null"],
+            "description": "Menu location (e.g., 'editor/title', 'scm/title')",
+            "enum": [
+              null,
+              "editor/title",
+              "editor/context",
+              "scm/title",
+              "explorer/context",
+              "view/title"
+            ]
+          },
+          "visualization": {
+            "type": "object",
+            "description": "Visual feedback configuration for command execution",
+            "properties": {
+              "showProgress": {
+                "type": "boolean",
+                "description": "Show progress notification during execution",
+                "default": true
+              },
+              "showStatus": {
+                "type": "boolean",
+                "description": "Show status bar message during execution",
+                "default": true
+              },
+              "outputChannel": {
+                "type": "string",
+                "description": "Output channel name for command logs"
+              },
+              "progressTitle": {
+                "type": "string",
+                "description": "Progress notification title"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["commands"],
+  "additionalProperties": false
+}

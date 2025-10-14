@@ -1,8 +1,5 @@
-out
-node_modules
+node_modules/
+out/
 *.vsix
-.vscode-test/
-*.log
 .DS_Store
 .env
-.claude

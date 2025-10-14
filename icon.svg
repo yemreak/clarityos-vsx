@@ -1,0 +1,26 @@
+<svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<!-- Eclipse Corona Glow -->
+	<circle cx="64" cy="64" r="61" fill="url(#icon-glow)"/>
+	<!-- Dark Core -->
+	<circle cx="64" cy="64" r="41" fill="url(#icon-core)"/>
+	<!-- Corona Ring -->
+	<circle cx="64" cy="64" r="41" stroke="url(#icon-ring)" stroke-width="2.5" fill="none"/>
+
+	<defs>
+		<radialGradient id="icon-glow">
+			<stop offset="40%" stop-color="transparent"/>
+			<stop offset="70%" stop-color="#fbbf24" stop-opacity="0.5"/>
+			<stop offset="85%" stop-color="#f59e0b" stop-opacity="0.3"/>
+			<stop offset="100%" stop-color="transparent"/>
+		</radialGradient>
+		<radialGradient id="icon-core">
+			<stop offset="0%" stop-color="#1a1a1a"/>
+			<stop offset="100%" stop-color="#0a0a0a"/>
+		</radialGradient>
+		<linearGradient id="icon-ring" x1="0%" y1="0%" x2="100%" y2="100%">
+			<stop offset="0%" stop-color="#fbbf24" stop-opacity="1"/>
+			<stop offset="50%" stop-color="#f59e0b" stop-opacity="0.8"/>
+			<stop offset="100%" stop-color="#d97706" stop-opacity="1"/>
+		</linearGradient>
+	</defs>
+</svg>
