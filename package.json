@@ -2,7 +2,7 @@
 	"name": "clarityos",
 	"displayName": "ClarityOS",
 	"description": "Serving clarity to humanity and their agents",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"publisher": "yemreak",
 	"engines": {
 		"vscode": "^1.99.0"
@@ -101,7 +101,7 @@
 		]
 	},
 	"scripts": {
-		"reinstall": "bun run check && code --uninstall-extension yemreak.clarityos 2>/dev/null || true && sleep 1 && /bin/rm -rf out/ && node esbuild.js --production && bunx vsce package && code --install-extension clarityos-1.0.1.vsix --force && echo '\n✓ Extension installed. Restart VS Code to activate.'",
+		"reinstall": "bun run check && code --uninstall-extension yemreak.clarityos 2>/dev/null || true && sleep 1 && /bin/rm -rf out/ && node esbuild.js --production && bunx vsce package && code --install-extension clarityos-1.0.2.vsix --force && echo '\n✓ Extension installed. Restart VS Code to activate.'",
 		"compile": "bun run reinstall",
 		"check": "bunx tsc --noEmit --noUnusedLocals --noUnusedParameters && eslint .",
 		"watch": "node esbuild.js --watch",
@@ -120,7 +120,8 @@
 	"license": "Apache-2.0",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/yemreak/clarityos-vsx.git"
+		"url": "https://github.com/yemreak/mind.git",
+		"directory": "src/interface/vscode/clarityos"
 	},
 	"type": "commonjs"
 }

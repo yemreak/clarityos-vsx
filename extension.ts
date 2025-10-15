@@ -233,6 +233,8 @@ export function activate(context: vscode.ExtensionContext) {
 	console.log('ClarityOS activated')
 }
 
-export function deactivate() {
-	console.log('ClarityOS deactivated')
+export async function deactivate() {
+	console.log('ClarityOS deactivating...')
+	// Note: context.subscriptions automatically handles cleanup
+	// including bridge.dispose() which now properly closes the server
 }

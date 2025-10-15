@@ -1,17 +1,22 @@
 # Changelog
 
-## [1.0.1] - 2025-10-14
+## [1.0.2] - 2025-10-15
 
-### Build System
-- Migrated from TypeScript compiler to esbuild
-- Bundle size optimization (minification + tree-shaking)
-- Faster build times with watch mode
-- Production builds: `bun run package`
+### Fix
 
-### Package Metadata
-- Added "Programming Languages" category
-- Enhanced keywords: markdown, syntax highlighting, vibe coding, cli bridge
-- Scripts: added `watch` and `package` commands
+**CLI Bridge Port Cleanup**
+- `server.close()` → Promise with callback
+- `server.on('error')` → EADDRINUSE detection
+- `deactivate()` → async cleanup
+- Extension reload no longer leaves port 9485 open
+
+### Enhancement
+
+**Folder Icon Coverage**
+- Material Icon Theme icons: `.claude`, `macos`, `admin`, `cloud`, `history`, `launchagents`
+- Default fallback: `folder.svg` → `folder-other.svg`
+- Removed `-open.svg` variants (simplified to single state)
+- Quick pick panels now show project-specific icons
 
 ## [1.0.0] - 2025-10-14
 

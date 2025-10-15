@@ -14,7 +14,6 @@
 # Build config
 tsconfig.json
 bun.lock
-esbuild.js
 
 # Developer documentation (not needed by users)
 ARCHITECTURE.md
@@ -23,12 +22,13 @@ CLAUDE.md
 # Old packages
 *.vsix
 
-# Node modules tests and docs
-node_modules/**/test/**
-node_modules/**/*.md
-node_modules/**/LICENSE
-node_modules/**/CHANGELOG.md
-node_modules/**/.github/**
+# Node modules (bundled with esbuild)
+node_modules/**
+
+# Exception: tsx (required for runtime TypeScript execution)
+!node_modules/tsx/**
+!node_modules/get-tsconfig/**
+!node_modules/resolve-pkg-maps/**
 
 # Source maps
 **/*.map

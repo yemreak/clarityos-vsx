@@ -248,6 +248,16 @@ export function startBridgeServer(params: {
 	const port = 9485
 	outputChannel.appendLine('=== CLI Bridge Started ===')
 	outputChannel.appendLine(`Listening on port ${port}`)
+
+	server.on('error', (error: NodeJS.ErrnoException) => {
+		if (error.code === 'EADDRINUSE') {
+			outputChannel.appendLine(`✖ Port ${port} already in use`)
+			outputChannel.appendLine('Run: lsof -ti :9485 | xargs kill -9')
+		} else {
+			outputChannel.appendLine(`✖ Server error: ${error}`)
+		}
+	})
+
 	server.listen(port, () => {
 		outputChannel.appendLine('Server is ready')
 		onProgress?.({ type: 'ready', port })
@@ -257,7 +267,16 @@ export function startBridgeServer(params: {
 		startTime,
 		broadcast,
 		dispose: () => {
-			server.close()
+			return new Promise<void>((resolve) => {
+				server.close((err) => {
+					if (err) {
+						outputChannel.appendLine(`✖ Error closing server: ${err}`)
+					} else {
+						outputChannel.appendLine('✓ Server closed')
+					}
+					resolve()
+				})
+			})
 		}
 	}
 }
@@ -269,5 +288,5 @@ export type BridgeProgressEvent =
 export type BridgeServerInstance = {
 	startTime: number
 	broadcast: (event: { event: string; timestamp: number; data: any }) => void
-	dispose: () => void
+	dispose: () => Promise<void>
 }

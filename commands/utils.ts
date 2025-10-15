@@ -10,10 +10,10 @@ export function getFolderIcon(folderName: string): string {
 
 	const folderNameMap: Record<string, string> = {
 		// Special directories
-		'.vscode': 'vscode.svg',
+		'.vscode': 'folder-vscode.svg',
 		'.git': 'folder-git.svg',
-		'.claude': 'claude.svg',
-		'node_modules': 'nodejs.svg',
+		'.claude': 'folder-claude.svg',
+		'node_modules': 'folder.svg',
 
 		// Config & Settings
 		'config': 'folder-config.svg',
@@ -57,7 +57,7 @@ export function getFolderIcon(folderName: string): string {
 		'pm2': 'folder-container.svg',
 		'chrome': 'folder-plugin.svg',
 		'hammerspoon': 'folder-hammerspoon.svg',
-		'cloudflare': 'folder-plugin.svg',
+		'cloudflare': 'folder-cloud.svg',
 		'fly': 'folder-plugin.svg',
 
 		// Logic layers
@@ -100,7 +100,26 @@ export function getFolderIcon(folderName: string): string {
 		'dist': 'folder.svg',
 		'build': 'folder.svg',
 		'icons': 'folder-images.svg',
-		'themes': 'folder-views.svg'
+		'themes': 'folder-views.svg',
+
+		// Documentation
+		'docs': 'folder.svg',
+		'documentation': 'folder.svg',
+
+		// Content
+		'posts': 'folder.svg',
+		'contexts': 'folder.svg',
+		'indexes': 'folder.svg',
+		'prompts': 'folder.svg',
+
+		// System
+		'launchagents': 'folder-launchagents.svg',
+		'nextdns': 'folder-network.svg',
+		'macos': 'folder-macos.svg',
+		'admin': 'folder-admin.svg',
+		'cloud': 'folder-cloud.svg',
+		'history': 'folder-history.svg',
+		'output-styles': 'folder-config.svg'
 	}
 
 	return folderNameMap[name] || 'folder.svg'
@@ -116,6 +135,7 @@ export function getFileIcon(filePath: string): string {
 		// Docker
 		'dockerfile': 'file-docker.svg',
 		// Documentation
+		'architecture.md': 'file-architecture.svg',
 		'claude.md': 'file-claude.svg',
 		'readme.md': 'file-readme.svg',
 		'readme': 'file-readme.svg',
@@ -163,7 +183,7 @@ export function getFileIcon(filePath: string): string {
 		'.tsx': 'file-typescript.svg',
 		'.js': 'file-javascript.svg',
 		'.jsx': 'file-javascript.svg',
-		'.cjs': 'cjs.svg',
+		'.cjs': 'file-cjs.svg',
 		'.py': 'file-python.svg',
 		'.lua': 'file-lua.svg',
 		'.swift': 'file-swift.svg',
@@ -188,9 +208,9 @@ export function getFileIcon(filePath: string): string {
 		'.gif': 'file-image.svg',
 		'.ico': 'file-favicon.svg',
 		// Apple & Xcode
-		'.plist': 'plist.svg',
-		'.mobileconfig': 'mobileconfig.svg',
-		'.xccolortheme': 'xccolortheme.svg',
+		'.plist': 'file-plist.svg',
+		'.mobileconfig': 'file-mobileconfig.svg',
+		'.xccolortheme': 'file-xccolortheme.svg',
 		// Config
 		'.env': 'file-settings.svg'
 	}
